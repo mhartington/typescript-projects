@@ -12,8 +12,5 @@
     "@app/module-1": "0.0.0",
     "@app/module-0": "0.0.0",
     "@app/shared": "0.0.0"
-  },
-  "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
   }
 }

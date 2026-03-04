@@ -761,8 +761,5 @@
     "@app/shared": "0.0.0"
   },
   "exports": "./src/index.ts",
-  "types": "./src/index.ts",
-  "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
-  }
+  "types": "./src/index.ts"
 }

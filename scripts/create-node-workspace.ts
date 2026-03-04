@@ -28,20 +28,29 @@ function toPackageDir(root: string, index: number): string {
   return path.join(root, "packages", `module-${index}`);
 }
 
-function rewriteModuleImports(source: string, index: number): string {
+function rewriteModuleImports(source: string): string {
+  return source.replace(
+    /from "\.\/file-(\d+)\.js";/g,
+    (_match, id: string) => `from "${toPackageName(Number(id))}";`
+  );
+}
+
+function addSharedUsageToModule(source: string, index: number): string {
+  if (index > 2) return source;
+
   let updated = source;
-  if (index > 0) {
+  if (!updated.includes('from "@app/shared";')) {
     updated = updated.replace(
-      `from "./file-${index - 1}.js";`,
-      `from "${toPackageName(index - 1)}";`
+      "\n\nexport type Payload = {",
+      '\nimport { sharedProbe } from "@app/shared";\n\nexport type Payload = {'
     );
   }
-  if (index > 1) {
-    updated = updated.replace(
-      `from "./file-${index - 2}.js";`,
-      `from "${toPackageName(index - 2)}";`
-    );
-  }
+
+  updated = updated.replace(
+    "  const payload = synthesizePayload(values[0] ?? seed);",
+    `  values.push(sharedProbe("module-${index}"));\n  const payload = synthesizePayload(values[0] ?? seed);`
+  );
+
   return updated;
 }
 
@@ -104,6 +113,7 @@ function buildModulePackageJson(index: number, totalModules: number): string {
   const deps: Record<string, string> = {};
   if (index > 0) deps[toPackageName(index - 1)] = "0.0.0";
   if (index > 1) deps[toPackageName(index - 2)] = "0.0.0";
+  if (index <= 2) deps["@app/shared"] = "0.0.0";
 
   return JSON.stringify(
     {
@@ -125,10 +135,24 @@ function buildModulePackageJson(index: number, totalModules: number): string {
 }
 
 function rewriteAppIndex(source: string): string {
-  return source.replace(
+  let updated = source.replace(
     /from "\.\/modules\/file-(\d+)\.js";/g,
     (_match, id: string) => `from "${toPackageName(Number(id))}";`
   );
+
+  if (!updated.includes('from "@app/shared";')) {
+    updated = `${updated.replace(
+      "\n\nexport function runAll(): number {",
+      '\nimport { sharedProbe } from "@app/shared";\n\nexport function runAll(): number {'
+    )}`;
+  }
+
+  updated = updated.replace(
+    "  return results.reduce((sum, item) => sum + item.length, 0);",
+    '  results.push(sharedProbe("app"));\n  return results.reduce((sum, item) => sum + item.length, 0);'
+  );
+
+  return updated;
 }
 
 function buildAppPackageJson(moduleCount: number): string {
@@ -136,6 +160,7 @@ function buildAppPackageJson(moduleCount: number): string {
   for (let i = 0; i < moduleCount; i++) {
     deps[toPackageName(i)] = "0.0.0";
   }
+  deps["@app/shared"] = "0.0.0";
 
   return JSON.stringify(
     {
@@ -150,6 +175,25 @@ function buildAppPackageJson(moduleCount: number): string {
       dependencies: deps,
       exports: "./src/index.ts",
       types: "./src/index.ts",
+    },
+    null,
+    2
+  );
+}
+
+function buildSharedPackageJson(): string {
+  return JSON.stringify(
+    {
+      name: "@app/shared",
+      private: true,
+      version: "0.0.0",
+      type: "module",
+      scripts: {
+        build: "tsc --noEmit",
+      },
+      exports: "./src/index.ts",
+      types: "./src/index.ts",
+      dependencies: {},
     },
     null,
     2
@@ -181,6 +225,14 @@ async function main() {
   const writes: Promise<void>[] = [];
   const pathsMap: Record<string, string[]> = {};
 
+  const sharedDir = path.join(workspaceRoot, "packages", "shared");
+  const sharedSrcDir = path.join(sharedDir, "src");
+  await mkdir(sharedSrcDir, { recursive: true });
+  writes.push(writeFile(path.join(sharedSrcDir, "index.ts"), 'export function sharedProbe(label: string): string { return `shared:${label}`; }\n', "utf8"));
+  writes.push(writeFile(path.join(sharedDir, "package.json"), buildSharedPackageJson(), "utf8"));
+  writes.push(writeFile(path.join(sharedDir, "tsconfig.json"), buildPackageTsConfig(), "utf8"));
+  pathsMap["@app/shared"] = ["packages/shared/src/index.ts"];
+
   for (const fileName of moduleFiles) {
     const index = Number(fileName.match(/\d+/)?.[0] ?? -1);
     if (index < 0) continue;
@@ -192,7 +244,13 @@ async function main() {
     pathsMap[toPackageName(index)] = [`packages/module-${index}/src/index.ts`];
 
     await mkdir(moduleSrcDir, { recursive: true });
-    writes.push(writeFile(path.join(moduleSrcDir, "index.ts"), rewriteModuleImports(srcContent, index), "utf8"));
+    writes.push(
+      writeFile(
+        path.join(moduleSrcDir, "index.ts"),
+        addSharedUsageToModule(rewriteModuleImports(srcContent), index),
+        "utf8"
+      )
+    );
     writes.push(writeFile(path.join(moduleDir, "package.json"), buildModulePackageJson(index, moduleCount), "utf8"));
     writes.push(writeFile(path.join(moduleDir, "tsconfig.json"), buildPackageTsConfig(), "utf8"));
   }
