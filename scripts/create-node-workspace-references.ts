@@ -67,6 +67,7 @@ function buildRootTsConfig(moduleCount: number): string {
   for (let i = 0; i < moduleCount; i++) {
     references.push({ path: `./packages/module-${i}` });
   }
+  references.push({ path: "./packages/shared" });
   references.push({ path: "./packages/app" });
 
   return JSON.stringify(
@@ -83,6 +84,7 @@ function buildModuleTsConfig(index: number): string {
   const references: Array<{ path: string }> = [];
   if (index > 0) references.push({ path: `../module-${index - 1}` });
   if (index > 1) references.push({ path: `../module-${index - 2}` });
+  if (index <= 2) references.push({ path: "../shared" });
 
   return JSON.stringify(
     {
@@ -109,11 +111,27 @@ function buildCheckTsConfig(): string {
   );
 }
 
+function buildSharedTsConfig(): string {
+  return JSON.stringify(
+    {
+      extends: "../../tsconfig.base.json",
+      compilerOptions: {
+        composite: true,
+      },
+      include: ["src/**/*.ts"],
+      references: [],
+    },
+    null,
+    2
+  );
+}
+
 function buildAppTsConfig(moduleCount: number): string {
   const references: Array<{ path: string }> = [];
   for (let i = 0; i < moduleCount; i++) {
     references.push({ path: `../module-${i}` });
   }
+  references.push({ path: "../shared" });
 
   return JSON.stringify(
     {
@@ -133,6 +151,7 @@ function buildModulePackageJson(index: number): string {
   const dependencies: Record<string, string> = {};
   if (index > 0) dependencies[toPackageName(index - 1)] = "0.0.0";
   if (index > 1) dependencies[toPackageName(index - 2)] = "0.0.0";
+  if (index <= 2) dependencies["@app/shared"] = "0.0.0";
 
   return JSON.stringify(
     {
@@ -157,6 +176,7 @@ function buildAppPackageJson(moduleCount: number): string {
   for (let i = 0; i < moduleCount; i++) {
     dependencies[toPackageName(i)] = "0.0.0";
   }
+  dependencies["@app/shared"] = "0.0.0";
 
   return JSON.stringify(
     {
@@ -177,6 +197,25 @@ function buildAppPackageJson(moduleCount: number): string {
   );
 }
 
+function buildSharedPackageJson(): string {
+  return JSON.stringify(
+    {
+      name: "@app/shared",
+      private: true,
+      version: "0.0.0",
+      type: "module",
+      scripts: {
+        build: "tsc --noEmit -p tsconfig.check.json",
+      },
+      exports: "./src/index.ts",
+      types: "./src/index.ts",
+      dependencies: {},
+    },
+    null,
+    2
+  );
+}
+
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const sourceRoot = path.resolve(process.cwd(), args.source);
@@ -184,6 +223,7 @@ async function main() {
 
   const sourcePackagesDir = path.join(sourceRoot, "packages");
   const sourceAppIndexPath = path.join(sourcePackagesDir, "app", "src", "index.ts");
+  const sourceSharedPath = path.join(sourcePackagesDir, "shared", "src", "index.ts");
 
   if (args.force) {
     await rm(outputRoot, { recursive: true, force: true });
@@ -216,6 +256,15 @@ async function main() {
     writes.push(writeFile(path.join(moduleDir, "tsconfig.check.json"), buildCheckTsConfig(), "utf8"));
   }
 
+  const sharedCode = await readFile(sourceSharedPath, "utf8");
+  const sharedDir = path.join(outputRoot, "packages", "shared");
+  const sharedSrcDir = path.join(sharedDir, "src");
+  await mkdir(sharedSrcDir, { recursive: true });
+  writes.push(writeFile(path.join(sharedSrcDir, "index.ts"), sharedCode, "utf8"));
+  writes.push(writeFile(path.join(sharedDir, "package.json"), buildSharedPackageJson(), "utf8"));
+  writes.push(writeFile(path.join(sharedDir, "tsconfig.json"), buildSharedTsConfig(), "utf8"));
+  writes.push(writeFile(path.join(sharedDir, "tsconfig.check.json"), buildCheckTsConfig(), "utf8"));
+
   const appCode = await readFile(sourceAppIndexPath, "utf8");
   const appDir = path.join(outputRoot, "packages", "app");
   const appSrcDir = path.join(appDir, "src");
@@ -232,7 +281,7 @@ async function main() {
   await Promise.all(writes);
 
   console.log(`Created project-reference workspace at: ${outputRoot}`);
-  console.log(`Packages: ${moduleIndexes.length} module packages + 1 app package`);
+  console.log(`Packages: ${moduleIndexes.length} module packages + 1 shared package + 1 app package`);
   console.log("Next steps:");
   console.log(`cd ${outputRoot}`);
   console.log("npm install");

@@ -11,8 +11,5 @@
   "dependencies": {
     "@app/module-51": "0.0.0",
     "@app/module-50": "0.0.0"
-  },
-  "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
   }
 }
