@@ -10,6 +10,9 @@
     "gen:node": "tsx scripts/generate-node-project.ts",
     "gen:workspace": "tsx scripts/create-node-workspace.ts",
     "gen:workspace:refs": "tsx scripts/create-node-workspace-references.ts",
+    "gen:minimal": "tsx scripts/create-minimal.ts",
+    "gen:trpc-completion": "tsx scripts/create-trpc-completion-demo.ts",
+    "gen:trpc-completion:refs": "tsx scripts/create-trpc-completion-demo-references.ts",
     "check": "tsc --noEmit"
   },
   "devDependencies": {
