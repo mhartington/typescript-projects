@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "tsgo --noEmit"
+    "build": "tsc --noEmit"
   },
   "dependencies": {
     "@trpc/server": "^11.0.0",

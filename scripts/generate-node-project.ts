@@ -15,10 +15,10 @@ function parseArgs(argv: string[]): Args {
     return index >= 0 ? argv[index + 1] : undefined;
   };
 
-  const name = get("--name") ?? "node-big-demo";
+  const name = get("--name") ?? "node-750-demo";
   const files = Number(get("--files") ?? "750");
-  const minLines = Number(get("--min-lines") ?? "40");
-  const maxLines = Number(get("--max-lines") ?? "220");
+  const minLines = Number(get("--min-lines") ?? "500");
+  const maxLines = Number(get("--max-lines") ?? "1800");
   const force = argv.includes("--force");
 
   if (!Number.isFinite(files) || files <= 0) {
@@ -147,7 +147,7 @@ function buildProjectPackageJson(name: string): string {
       private: true,
       type: "module",
       scripts: {
-        build: "tsc",
+        build: "tsc --noEmit",
         start: "node dist/index.js",
       },
       devDependencies: {

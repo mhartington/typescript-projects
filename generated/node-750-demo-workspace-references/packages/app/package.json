@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsgo --noEmit -p tsconfig.check.json",
+    "build": "tsc --noEmit -p tsconfig.check.json",
     "start": "node dist/index.js"
   },
   "dependencies": {

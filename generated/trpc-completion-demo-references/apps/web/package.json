@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "tsgo --noEmit -p tsconfig.json"
+    "build": "tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
     "@org/api": "0.0.1",

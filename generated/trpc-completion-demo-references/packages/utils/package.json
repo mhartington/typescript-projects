@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "build": "tsgo -b"
+    "build": "tsc -b"
   },
   "types": "./dist-types/src/base-url.d.ts",
   "devDependencies": {
