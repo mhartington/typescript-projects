@@ -1,0 +1,20 @@
+{
+  "name": "ts-is-slow-demos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Node scripts for generating large demo projects",
+  "scripts": {
+    "gen": "tsx scripts/generate.ts",
+    "gen:project": "tsx scripts/generate-project.ts",
+    "gen:node": "tsx scripts/generate-node-project.ts",
+    "gen:workspace": "tsx scripts/create-node-workspace.ts",
+    "gen:workspace:refs": "tsx scripts/create-node-workspace-references.ts",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
