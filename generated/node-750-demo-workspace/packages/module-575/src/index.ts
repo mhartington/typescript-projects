@@ -1,0 +1,75 @@
+import { createHash, randomUUID } from "node:crypto";
+import { basename, join } from "node:path";
+import { cpus, tmpdir } from "node:os";
+import { parse as parseUrl } from "node:url";
+import { inspect } from "node:util";
+import { main as mainPrev } from "@app/module-574";
+import { main as mainPrev2 } from "@app/module-573";
+
+export type Payload = {
+  fileId: number;
+  marker: "file_575";
+  digest: string;
+  values: string[];
+};
+
+function synthesizePayload(sample: string): Payload {
+  const values: string[] = [sample];
+  values.push(sample + "-0");
+  values.push(sample + "-1");
+  values.push(sample + "-2");
+  values.push(sample + "-3");
+  values.push(sample + "-4");
+  values.push(sample + "-5");
+  values.push(sample + "-6");
+  values.push(sample + "-7");
+  values.push(sample + "-8");
+  values.push(sample + "-9");
+  values.push(sample + "-10");
+  return { fileId: 575, marker: "file_575", digest: sample, values };
+}
+
+export function main(): string {
+  const seed = "file-575";
+  const root = join(tmpdir(), "node-demo", seed);
+  const url = parseUrl("https://example.com/" + basename(root));
+  const cpuCount = cpus().length;
+  const digest = createHash("sha256").update(seed).digest("hex").slice(0, 12);
+  const id = randomUUID().slice(0, 8);
+  const values: string[] = [];
+  values.push(mainPrev());
+  values.push(mainPrev2());
+  values.push(`575:0:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:1:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:2:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:3:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:4:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:5:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:6:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:7:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:8:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:9:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:10:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:11:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:12:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:13:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:14:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:15:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:16:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:17:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:18:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:19:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:20:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:21:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:22:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:23:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:24:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:25:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:26:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`575:27:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  const payload = synthesizePayload(values[0] ?? seed);
+  values.push((payload.fileId as number).toString());
+  values.push(payload.marker as string);
+  const preview = inspect(values.slice(0, 3), { compact: true, breakLength: 120 });
+  return values.length + "|" + preview;
+}

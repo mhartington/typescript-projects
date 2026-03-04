@@ -1,0 +1,12 @@
+{
+  "name": "@org/utils",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsgo --noEmit"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

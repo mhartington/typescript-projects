@@ -1,0 +1,17 @@
+{
+  "name": "@org/api",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsgo --noEmit"
+  },
+  "dependencies": {
+    "@trpc/server": "^11.0.0",
+    "superjson": "^2.2.2",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

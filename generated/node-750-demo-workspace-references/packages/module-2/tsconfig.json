@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../module-1"
+    },
+    {
+      "path": "../module-0"
+    },
+    {
+      "path": "../shared"
+    }
+  ]
+}

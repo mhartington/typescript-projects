@@ -1,0 +1,19 @@
+{
+  "name": "org-demo-references",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "prebuild": "tsgo -b packages/utils packages/api",
+    "build": "npm run prebuild && npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0",
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@app/module-555",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsgo --noEmit -p tsconfig.check.json"
+  },
+  "exports": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@app/module-554": "0.0.0",
+    "@app/module-553": "0.0.0"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

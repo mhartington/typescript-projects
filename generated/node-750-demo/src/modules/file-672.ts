@@ -1,0 +1,94 @@
+import { createHash, randomUUID } from "node:crypto";
+import { basename, join } from "node:path";
+import { cpus, tmpdir } from "node:os";
+import { parse as parseUrl } from "node:url";
+import { inspect } from "node:util";
+import { main as mainPrev } from "./file-671.js";
+import { main as mainPrev2 } from "./file-670.js";
+
+export type Payload = {
+  fileId: number;
+  marker: "file_672";
+  digest: string;
+  values: string[];
+};
+
+function synthesizePayload(sample: string): Payload {
+  const values: string[] = [sample];
+  values.push(sample + "-0");
+  values.push(sample + "-1");
+  values.push(sample + "-2");
+  values.push(sample + "-3");
+  values.push(sample + "-4");
+  values.push(sample + "-5");
+  values.push(sample + "-6");
+  values.push(sample + "-7");
+  values.push(sample + "-8");
+  values.push(sample + "-9");
+  return { fileId: 672, marker: "file_672", digest: sample, values };
+}
+
+export function main(): string {
+  const seed = "file-672";
+  const root = join(tmpdir(), "node-demo", seed);
+  const url = parseUrl("https://example.com/" + basename(root));
+  const cpuCount = cpus().length;
+  const digest = createHash("sha256").update(seed).digest("hex").slice(0, 12);
+  const id = randomUUID().slice(0, 8);
+  const values: string[] = [];
+  values.push(mainPrev());
+  values.push(mainPrev2());
+  values.push(`672:0:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:1:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:2:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:3:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:4:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:5:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:6:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:7:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:8:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:9:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:10:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:11:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:12:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:13:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:14:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:15:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:16:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:17:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:18:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:19:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:20:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:21:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:22:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:23:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:24:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:25:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:26:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:27:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:28:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:29:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:30:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:31:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:32:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:33:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:34:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:35:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:36:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:37:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:38:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:39:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:40:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:41:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:42:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:43:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:44:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:45:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:46:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`672:47:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  const payload = synthesizePayload(values[0] ?? seed);
+  values.push((payload.fileId as number).toString());
+  values.push(payload.marker as string);
+  const preview = inspect(values.slice(0, 3), { compact: true, breakLength: 120 });
+  return values.length + "|" + preview;
+}

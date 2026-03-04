@@ -1,0 +1,18 @@
+{
+  "name": "@app/module-432",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsgo --noEmit"
+  },
+  "exports": "./src/index.ts",
+  "types": "./src/index.ts",
+  "dependencies": {
+    "@app/module-431": "0.0.0",
+    "@app/module-430": "0.0.0"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

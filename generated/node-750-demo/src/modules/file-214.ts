@@ -1,0 +1,95 @@
+import { createHash, randomUUID } from "node:crypto";
+import { basename, join } from "node:path";
+import { cpus, tmpdir } from "node:os";
+import { parse as parseUrl } from "node:url";
+import { inspect } from "node:util";
+import { main as mainPrev } from "./file-213.js";
+import { main as mainPrev2 } from "./file-212.js";
+
+export type Payload = {
+  fileId: number;
+  marker: "file_214";
+  digest: string;
+  values: string[];
+};
+
+function synthesizePayload(sample: string): Payload {
+  const values: string[] = [sample];
+  values.push(sample + "-0");
+  values.push(sample + "-1");
+  values.push(sample + "-2");
+  values.push(sample + "-3");
+  values.push(sample + "-4");
+  values.push(sample + "-5");
+  values.push(sample + "-6");
+  values.push(sample + "-7");
+  values.push(sample + "-8");
+  values.push(sample + "-9");
+  values.push(sample + "-10");
+  values.push(sample + "-11");
+  values.push(sample + "-12");
+  values.push(sample + "-13");
+  return { fileId: 214, marker: "file_214", digest: sample, values };
+}
+
+export function main(): string {
+  const seed = "file-214";
+  const root = join(tmpdir(), "node-demo", seed);
+  const url = parseUrl("https://example.com/" + basename(root));
+  const cpuCount = cpus().length;
+  const digest = createHash("sha256").update(seed).digest("hex").slice(0, 12);
+  const id = randomUUID().slice(0, 8);
+  const values: string[] = [];
+  values.push(mainPrev());
+  values.push(mainPrev2());
+  values.push(`214:0:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:1:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:2:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:3:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:4:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:5:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:6:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:7:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:8:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:9:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:10:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:11:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:12:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:13:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:14:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:15:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:16:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:17:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:18:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:19:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:20:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:21:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:22:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:23:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:24:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:25:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:26:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:27:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:28:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:29:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:30:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:31:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:32:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:33:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:34:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:35:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:36:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:37:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:38:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:39:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:40:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:41:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:42:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:43:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`214:44:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  const payload = synthesizePayload(values[0] ?? seed);
+  values.push((payload.fileId as number).toString());
+  values.push(payload.marker as string);
+  const preview = inspect(values.slice(0, 3), { compact: true, breakLength: 120 });
+  return values.length + "|" + preview;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@org/utils",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsgo -b"
+  },
+  "types": "./dist-types/src/base-url.d.ts",
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+  }
+}

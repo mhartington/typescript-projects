@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@org/api": [
+        "./packages/api/src/index.ts"
+      ],
+      "@org/api/*": [
+        "./packages/api/src/*"
+      ],
+      "@org/utils/*": [
+        "./packages/utils/src/*"
+      ]
+    }
+  }
+}

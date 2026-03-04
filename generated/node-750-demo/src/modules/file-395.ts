@@ -1,0 +1,94 @@
+import { createHash, randomUUID } from "node:crypto";
+import { basename, join } from "node:path";
+import { cpus, tmpdir } from "node:os";
+import { parse as parseUrl } from "node:url";
+import { inspect } from "node:util";
+import { main as mainPrev } from "./file-394.js";
+import { main as mainPrev2 } from "./file-393.js";
+
+export type Payload = {
+  fileId: number;
+  marker: "file_395";
+  digest: string;
+  values: string[];
+};
+
+function synthesizePayload(sample: string): Payload {
+  const values: string[] = [sample];
+  values.push(sample + "-0");
+  values.push(sample + "-1");
+  values.push(sample + "-2");
+  values.push(sample + "-3");
+  values.push(sample + "-4");
+  values.push(sample + "-5");
+  values.push(sample + "-6");
+  values.push(sample + "-7");
+  values.push(sample + "-8");
+  values.push(sample + "-9");
+  values.push(sample + "-10");
+  values.push(sample + "-11");
+  values.push(sample + "-12");
+  return { fileId: 395, marker: "file_395", digest: sample, values };
+}
+
+export function main(): string {
+  const seed = "file-395";
+  const root = join(tmpdir(), "node-demo", seed);
+  const url = parseUrl("https://example.com/" + basename(root));
+  const cpuCount = cpus().length;
+  const digest = createHash("sha256").update(seed).digest("hex").slice(0, 12);
+  const id = randomUUID().slice(0, 8);
+  const values: string[] = [];
+  values.push(mainPrev());
+  values.push(mainPrev2());
+  values.push(`395:0:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:1:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:2:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:3:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:4:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:5:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:6:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:7:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:8:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:9:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:10:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:11:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:12:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:13:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:14:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:15:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:16:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:17:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:18:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:19:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:20:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:21:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:22:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:23:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:24:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:25:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:26:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:27:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:28:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:29:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:30:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:31:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:32:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:33:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:34:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:35:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:36:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:37:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:38:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:39:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:40:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:41:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:42:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:43:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  values.push(`395:44:${cpuCount}:${url.pathname ?? "none"}:${digest}:${id}`);
+  const payload = synthesizePayload(values[0] ?? seed);
+  values.push((payload.fileId as number).toString());
+  values.push(payload.marker as string);
+  const preview = inspect(values.slice(0, 3), { compact: true, breakLength: 120 });
+  return values.length + "|" + preview;
+}
