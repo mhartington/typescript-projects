@@ -10,7 +10,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -24,7 +24,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -47,7 +47,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -61,7 +61,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -84,7 +84,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -98,7 +98,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -121,7 +121,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -135,7 +135,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -158,7 +158,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -172,7 +172,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -195,7 +195,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -209,7 +209,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -232,7 +232,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -246,7 +246,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -269,7 +269,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -283,7 +283,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -306,7 +306,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -320,7 +320,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -343,7 +343,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -357,7 +357,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -380,7 +380,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -394,7 +394,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -417,7 +417,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -431,7 +431,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -454,7 +454,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -468,7 +468,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -491,7 +491,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
@@ -505,7 +505,7 @@ export declare const router1: import("@trpc/server").TRPCBuiltRouter<{
             search: string;
             filters: {
                 active: boolean;
-                level: "high" | "low" | "mid";
+                level: "low" | "mid" | "high";
                 tags: string[];
             };
             cursor: {
