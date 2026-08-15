@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="535da15e-3ca5-493a-a93a-ba7b9d4dc5dd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/generated/demo-1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-1/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-1/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-1/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-2/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-2/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-3/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-3/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-4/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-4/apps/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-4/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-4/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-4/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-4/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-4/packages/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-4/packages/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-4/packages/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-4/packages/utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-5/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-5/apps/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-5/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-5/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-5/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-5/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-5/packages/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-5/packages/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generated/demo-5/packages/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/generated/demo-5/packages/utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/create-node-workspace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/create-node-workspace.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="6443" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.3486875515174026" />
+      <entry key="MS500" value="1.9357431692641922" />
+      <entry key="S2" value="4.101489991983533" />
+      <entry key="S5" value="6.271325494696304" />
+      <entry key="S10" value="7.786781599212031" />
+      <entry key="S30" value="14.228786429713578" />
+      <entry key="S60" value="20.91712813336683" />
+      <entry key="M2" value="27.87478258632406" />
+      <entry key="M5" value="43.430085272358404" />
+      <entry key="M10" value="59.82595308566276" />
+      <entry key="M15" value="68.64515743856637" />
+      <entry key="M30" value="80.22010537386542" />
+      <entry key="H1" value="90.37236911806112" />
+      <entry key="H2" value="107.31009324126174" />
+      <entry key="H4" value="129.38134456201314" />
+      <entry key="D1" value="165.56046854464978" />
+      <entry key="W1" value="174.42511202337306" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.242481387708058E-129" />
+      <entry key="S5" value="2.7397816758085388E-52" />
+      <entry key="S10" value="1.6552285871771694E-26" />
+      <entry key="S30" value="2.5485079505100124E-9" />
+      <entry key="S60" value="5.048274903875587E-5" />
+      <entry key="M2" value="0.007105121324703443" />
+      <entry key="M5" value="0.1382383684015158" />
+      <entry key="M10" value="0.3718042117823484" />
+      <entry key="M15" value="0.517065098612687" />
+      <entry key="M30" value="0.7207459224889831" />
+      <entry key="H1" value="0.8889129211422665" />
+      <entry key="H2" value="1.1231767514839353" />
+      <entry key="H4" value="1.40941178997946" />
+      <entry key="D1" value="1.8684783494516606" />
+      <entry key="W1" value="1.9801759647777166" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.311807608647943" />
+      <entry key="MS500" value="1.924600722257789" />
+      <entry key="S2" value="4.05059812316479" />
+      <entry key="S5" value="6.204443649697749" />
+      <entry key="S10" value="7.735398778809913" />
+      <entry key="S30" value="14.196481171856222" />
+      <entry key="S60" value="20.893442461525453" />
+      <entry key="M2" value="27.8665199575879" />
+      <entry key="M5" value="43.56015544554329" />
+      <entry key="M10" value="60.19268291660223" />
+      <entry key="M15" value="69.15847329689547" />
+      <entry key="M30" value="80.9387288245793" />
+      <entry key="H1" value="91.26009603371482" />
+      <entry key="H2" value="108.43255511299984" />
+      <entry key="H4" value="130.7903161568133" />
+      <entry key="D1" value="167.42885062544045" />
+      <entry key="W1" value="176.4052734305208" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3HvO6aqNtBvmnfEZL8Cr6XcPFpk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/mhartington/Github/ts-is-slow-demos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="535da15e-3ca5-493a-a93a-ba7b9d4dc5dd" name="Changes" comment="" />
+      <created>1786744901700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786744901700</updated>
+      <workItem from="1786744902713" duration="1924000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="ts7" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

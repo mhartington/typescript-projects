@@ -67,7 +67,7 @@ function buildRootPackageJson(name: string): string {
       },
       devDependencies: {
         "@types/node": "^24.0.0",
-        typescript: "^5.9.0",
+        typescript: "^7.0.2",
       },
     },
     null,
@@ -85,9 +85,10 @@ function buildRootTsConfig(paths: Record<string, string[]>): string {
         strict: true,
         skipLibCheck: true,
         noEmit: true,
-        baseUrl: ".",
         types: ["node"],
-        paths,
+        paths: Object.fromEntries(
+          Object.entries(paths).map(([name, targets]) => [name, targets.map((target) => `./${target}`)])
+        ),
       },
     },
     null,

@@ -7,6 +7,6 @@
     "build": "tsc --noEmit"
   },
   "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260304.1"
+    "@typescript/native-preview": "^7.0.0-dev.20260707.2"
   }
 }
