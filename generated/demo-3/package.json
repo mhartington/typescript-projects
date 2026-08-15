@@ -7,7 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present"
+    "build": "tsc --build --builders 8",
+    "clean": "tsc --build --clean"
+
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
