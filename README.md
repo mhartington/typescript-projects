@@ -12,6 +12,7 @@ npm install
 
 - `npm run gen`: creates/ensures the `generated/` output folder exists
 - `npm run gen:project -- --name perf-test --files 1000 --lines 200`: generates many TypeScript files
+- `npm run install:generated`: runs `npm install` for all projects in `generated/`
 - `npm run check`: type-checks the scripts
 
 ## Notes

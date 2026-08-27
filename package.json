@@ -13,6 +13,10 @@
     "gen:minimal": "tsx scripts/create-minimal.ts",
     "gen:trpc-completion": "tsx scripts/create-trpc-completion-demo.ts",
     "gen:trpc-completion:refs": "tsx scripts/create-trpc-completion-demo-references.ts",
+    "install:generated": "tsx scripts/install-generated.ts",
+    "install:all": "tsx scripts/install-generated.ts",
+    "install:projects": "tsx scripts/install-generated.ts",
+    "gen:install": "tsx scripts/install-generated.ts",
     "check": "tsc --noEmit"
   },
   "devDependencies": {
