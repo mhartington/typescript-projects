@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present"
+    "build": "npm run build --workspace @app/main"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
