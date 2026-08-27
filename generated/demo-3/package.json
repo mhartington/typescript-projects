@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace @app/main",
+    "build": "tsc --build --builders 8",
     "clean": "tsc --build --clean"
 
   },
